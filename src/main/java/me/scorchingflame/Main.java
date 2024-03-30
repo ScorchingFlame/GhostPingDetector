@@ -23,7 +23,7 @@ public class Main{
                 // Can also add more
         );
 
-        JDA jda = JDABuilder.createLight("")
+        JDA jda = JDABuilder.createLight(new DotEnv().setUp(".env").getEnv("TOKEN"))
                 .enableIntents(GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MESSAGES)
                 .addEventListeners(new event(), slashCommandManager)
                 .addEventListeners()
