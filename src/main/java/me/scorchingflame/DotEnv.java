@@ -2,6 +2,7 @@ package me.scorchingflame;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ public class DotEnv {
     private static Map<String, String> envVars;
     public DotEnv setUp(String path) throws IOException {
         File file = new File(path);
+        envVars = new HashMap<>();
         if (!file.exists()) {
             boolean created = file.createNewFile();
         }else {
